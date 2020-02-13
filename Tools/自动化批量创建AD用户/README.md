@@ -4,13 +4,13 @@
 
 2，需要修改的内容
 参数详解：
-OU ---组织单位,例如:lszy
-dc ---域名前缀,例如:wiseos
-dc ---域名后缀,例如:internal
-%d@ --域名全称,例如:wiseos.internal
+OU ---组织单位,例如:研发部门
+dc ---域名前缀,例如:test
+dc ---域名后缀,例如:com
+%d@ --域名全称,例如:test.com
 
 3，在CMD命令行执行的语法：
 
 命令如下：
 
-for /f "tokens=1,2,3,4,5 delims=," %a in (user.csv) do dsadd user "cn=%c,ou=lszy,dc=wiseos,dc=internal" -samid %d -upn %d@wiseos.internal -ln %a -fn %b -pwd %e -disabled no
+for /f "tokens=1,2,3,4,5 delims=," %a in (user.csv) do dsadd user "cn=%c,ou=研发部门,dc=test,dc=com" -samid %d -upn %d@test.com -ln %a -fn %b -pwd %e -disabled no
